@@ -5,8 +5,12 @@ import "./styles.css";
 
 export default function App() {
   const [hlsUrl, setHlsUrl] = useState(
-    "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.mp4/.m3u8"
+    localStorage.getItem('url') || ''
   );
+  const handleSetUrl = (url) => {
+    setHlsUrl(url)
+    localStorage.setItem('url', url);
+  }
 
   return (
     <div className="row justify-content-center">
@@ -17,7 +21,7 @@ export default function App() {
         value={hlsUrl}
         aria-label="hls-url"
         aria-describedby="set-hls-url"
-        onChange={(e) => setHlsUrl(e.target.value)}
+        onChange={(e) => handleSetUrl(e.target.value)}
       />
       <ReactHlsPlayer
         src={hlsUrl}
