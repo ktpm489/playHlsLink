@@ -5,3 +5,9 @@
 .w-90 {
   width: 90%;
 }
+
+.mediaPlay {
+   min-height: min(80vh, 600px);
+   width: 90%;
+   height: auto;
+}
