@@ -14,6 +14,7 @@ export default function App() {
 
   return (
     <div className="row justify-content-center">
+      <h1 className='mt-3 mb-3'>Play Stream Online</h1>
       <input
         type="text"
         className="form-control w-90 m-2 my-4"
